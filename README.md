@@ -10,8 +10,8 @@
   <h3><img src="https://www.iconfinder.com/icons/7763757/download/svg/4096" height="25"> My Github</h3>
   <a href="https://github.com/ryo-ma/github-profile-trophy"><img src="https://github-profile-trophy.vercel.app/?username=cocoaoi&column=8&margin-w=15&margin-h=15" alt="cocoaoi" style="height:150px"></a>
   <div style="display:flex;justify-content:center;gap:30px;margin:20px 0">
-    <img src="https://github-readme-stats.vercel.app/api/top-langs?username=cocoaoi&show_icons=true&hide_border=true&locale=en&layout=compact&custom_title=Most%20Used%20Languages&bg_color=00000000&title_color=58a6ff" style="height:150px">
-    <img src="https://github-readme-stats.vercel.app/api?username=cocoaoi&show_icons=true&hide_border=true&locale=en&custom_title=GitHub%20Stats&bg_color=00000000&title_color=58a6ff" style="height:150px">
+    <img src="https://github-readme-stats.vercel.app/api/top-langs?username=xiaotwu&show_icons=true&hide_border=true&locale=en&layout=compact&custom_title=Most%20Used%20Languages&bg_color=00000000&title_color=58a6ff" style="height:150px">
+    <img src="https://github-readme-stats.vercel.app/api?username=xiaotwu&show_icons=true&hide_border=true&locale=en&custom_title=GitHub%20Stats&bg_color=00000000&title_color=58a6ff" style="height:150px">
   </div>
 </div> </br>
 
