@@ -7,7 +7,12 @@
 <h3 align="center" style="margin-bottom:30px"> 🌱 MSE Student @ San Jose State University</h3> </br>
 
 <div align="center" style="margin-bottom:30px">
-  <h3><img alt="GitHub Icon" src="./assets/github.svg" width="35" height="35" style="vertical-align:middle"> My Github</h3>
+  <h3>
+  <span style="display: inline-flex; align-items: center; gap: 8px;">
+    <img alt="GitHub Icon" src="./assets/github.svg" style="height: 50px;">
+    My Github
+  </span>
+</h3>
   <a href="https://github.com/ryo-ma/github-profile-trophy"><img src="https://github-profile-trophy.vercel.app/?username=xiaotwu&column=8&margin-w=15&margin-h=15" alt="xiaotwu" style="height:150px"></a>
   <div style="display:flex;justify-content:center;gap:30px;margin:20px 0">
     <img src="https://github-readme-stats.vercel.app/api/top-langs?username=xiaotwu&show_icons=true&hide_border=true&locale=en&layout=compact&custom_title=Most%20Used%20Languages&bg_color=00000000&title_color=58a6ff" style="height:150px">
@@ -41,6 +46,6 @@
 <div align="center" style="margin-bottom:50px">
   <h3> 📫 Connect with me</h3>
   <a href="https://linkedin.com/in/xiaotong-wu" target="_blank">
-    <img alt="LinkedIn Icon" src="./assets/linkedin.svg" width="35" height="35" style="vertical-align:middle">
+    <img alt="LinkedIn Icon" src="./assets/linkedin.svg" style="height: 50px; vertical-align: middle;">
   </a>
 </div>
