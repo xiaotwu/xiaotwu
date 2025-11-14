@@ -7,8 +7,12 @@
 ###
 
 <div align="center">
-  <h3>MSE Student @ San Jose State University</h3>
-  <img src="https://img.shields.io/static/v1?message=LinkedIn&logo=linkedin&label=&color=0077B5&logoColor=white&labelColor=&style=for-the-badge" height="25" alt="linkedin logo"  />
+  <h3 style="font-family: monospace; font-weight: bold; letter-spacing: 1px;">
+    MSE Student @ San Jose State University
+  </h3>
+  <a href="https://www.linkedin.com/in/xiaotong-wu/" target="_blank" rel="noopener noreferrer" style="text-decoration:none;">
+    <img src="https://img.shields.io/static/v1?message=LinkedIn&logo=linkedin&label=&color=0077B5&logoColor=white&labelColor=&style=for-the-badge" height="25" alt="linkedin logo" />
+  </a>
 </div>
 
 ###
@@ -16,41 +20,94 @@
 <br clear="both">
 
 <div align="center">
-  <img src="https://skillicons.dev/icons?i=c" height="40" alt="c logo"  />
+  <a href="https://en.cppreference.com/w/c" target="_blank" rel="noopener noreferrer" style="text-decoration:none;">
+    <img src="https://skillicons.dev/icons?i=c" height="40" alt="c logo" />
+  </a>
   <img width="12" />
-  <img src="https://skillicons.dev/icons?i=cs" height="40" alt="csharp logo"  />
+
+  <a href="https://learn.microsoft.com/dotnet/csharp/" target="_blank" rel="noopener noreferrer" style="text-decoration:none;">
+    <img src="https://skillicons.dev/icons?i=cs" height="40" alt="csharp logo" />
+  </a>
   <img width="12" />
-  <img src="https://skillicons.dev/icons?i=py" height="40" alt="python logo"  />
+
+  <a href="https://www.python.org/" target="_blank" rel="noopener noreferrer" style="text-decoration:none;">
+    <img src="https://skillicons.dev/icons?i=py" height="40" alt="python logo" />
+  </a>
   <img width="12" />
-  <img src="https://skillicons.dev/icons?i=html" height="40" alt="html5 logo"  />
+
+  <a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank" rel="noopener noreferrer" style="text-decoration:none;">
+    <img src="https://skillicons.dev/icons?i=html" height="40" alt="html5 logo" />
+  </a>
   <img width="12" />
-  <img src="https://skillicons.dev/icons?i=css" height="40" alt="css logo"  />
+
+  <a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank" rel="noopener noreferrer" style="text-decoration:none;">
+    <img src="https://skillicons.dev/icons?i=css" height="40" alt="css logo" />
+  </a>
   <img width="12" />
-  <img src="https://skillicons.dev/icons?i=js" height="40" alt="javascript logo"  />
+
+  <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noopener noreferrer" style="text-decoration:none;">
+    <img src="https://skillicons.dev/icons?i=js" height="40" alt="javascript logo" />
+  </a>
   <img width="12" />
-  <img src="https://skillicons.dev/icons?i=pytorch" height="40" alt="pytorch logo"  />
+
+  <a href="https://pytorch.org/" target="_blank" rel="noopener noreferrer" style="text-decoration:none;">
+    <img src="https://skillicons.dev/icons?i=pytorch" height="40" alt="pytorch logo" />
+  </a>
   <img width="12" />
-  <img src="https://skillicons.dev/icons?i=tensorflow" height="40" alt="tensorflow logo"  />
+
+  <a href="https://www.tensorflow.org/" target="_blank" rel="noopener noreferrer" style="text-decoration:none;">
+    <img src="https://skillicons.dev/icons?i=tensorflow" height="40" alt="tensorflow logo" />
+  </a>
   <img width="12" />
-  <img src="https://skillicons.dev/icons?i=ros" height="40" alt="ros logo"  />
+
+  <a href="https://www.ros.org/" target="_blank" rel="noopener noreferrer" style="text-decoration:none;">
+    <img src="https://skillicons.dev/icons?i=ros" height="40" alt="ros logo" />
+  </a>
   <img width="12" />
-  <img src="https://skillicons.dev/icons?i=arduino" height="40" alt="arduino logo"  />
+
+  <a href="https://www.arduino.cc/" target="_blank" rel="noopener noreferrer" style="text-decoration:none;">
+    <img src="https://skillicons.dev/icons?i=arduino" height="40" alt="arduino logo" />
+  </a>
   <img width="12" />
-  <img src="https://skillicons.dev/icons?i=docker" height="40" alt="docker logo"  />
+
+  <a href="https://www.docker.com/" target="_blank" rel="noopener noreferrer" style="text-decoration:none;">
+    <img src="https://skillicons.dev/icons?i=docker" height="40" alt="docker logo" />
+  </a>
   <img width="12" />
-  <img src="https://skillicons.dev/icons?i=kubernetes" height="40" alt="kubernetes logo"  />
+
+  <a href="https://kubernetes.io/" target="_blank" rel="noopener noreferrer" style="text-decoration:none;">
+    <img src="https://skillicons.dev/icons?i=kubernetes" height="40" alt="kubernetes logo" />
+  </a>
   <img width="12" />
-  <img src="https://skillicons.dev/icons?i=postgres" height="40" alt="postgresql logo"  />
+
+  <a href="https://www.postgresql.org/" target="_blank" rel="noopener noreferrer" style="text-decoration:none;">
+    <img src="https://skillicons.dev/icons?i=postgres" height="40" alt="postgresql logo" />
+  </a>
   <img width="12" />
-  <img src="https://skillicons.dev/icons?i=mongodb" height="40" alt="mongodb logo"  />
+
+  <a href="https://www.mongodb.com/" target="_blank" rel="noopener noreferrer" style="text-decoration:none;">
+    <img src="https://skillicons.dev/icons?i=mongodb" height="40" alt="mongodb logo" />
+  </a>
   <img width="12" />
-  <img src="https://skillicons.dev/icons?i=redis" height="40" alt="redis logo"  />
+
+  <a href="https://redis.io/" target="_blank" rel="noopener noreferrer" style="text-decoration:none;">
+    <img src="https://skillicons.dev/icons?i=redis" height="40" alt="redis logo" />
+  </a>
   <img width="12" />
-  <img src="https://skillicons.dev/icons?i=aws" height="40" alt="amazonwebservices logo"  />
+
+  <a href="https://aws.amazon.com/" target="_blank" rel="noopener noreferrer" style="text-decoration:none;">
+    <img src="https://skillicons.dev/icons?i=aws" height="40" alt="amazonwebservices logo" />
+  </a>
   <img width="12" />
-  <img src="https://skillicons.dev/icons?i=cloudflare" height="40" alt="cloudflare logo"  />
+
+  <a href="https://www.cloudflare.com/" target="_blank" rel="noopener noreferrer" style="text-decoration:none;">
+    <img src="https://skillicons.dev/icons?i=cloudflare" height="40" alt="cloudflare logo" />
+  </a>
   <img width="12" />
-  <img src="https://skillicons.dev/icons?i=unity" height="40" alt="unity logo"  />
+
+  <a href="https://unity.com/" target="_blank" rel="noopener noreferrer" style="text-decoration:none;">
+    <img src="https://skillicons.dev/icons?i=unity" height="40" alt="unity logo" />
+  </a>
 </div>
 
 ###
