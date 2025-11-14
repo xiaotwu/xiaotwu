@@ -10,111 +10,61 @@
   <h3 style="font-family: monospace; font-weight: bold; letter-spacing: 1px;">
     MSE Student @ San Jose State University
   </h3>
-  <a href="https://www.linkedin.com/in/xiaotong-wu/" target="_blank" rel="noopener noreferrer" style="text-decoration:none;">
-    <img src="https://img.shields.io/static/v1?message=LinkedIn&logo=linkedin&label=&color=0077B5&logoColor=white&labelColor=&style=for-the-badge" height="25" alt="linkedin logo" />
-  </a>
-</div>
-
-###
-
-<br clear="both">
-
-<div align="center">
-  <a href="https://en.cppreference.com/w/c" target="_blank" rel="noopener noreferrer" style="text-decoration:none;">
-    <img src="https://skillicons.dev/icons?i=c" height="40" alt="c logo" />
-  </a>
-  <img width="12" />
-
-  <a href="https://learn.microsoft.com/dotnet/csharp/" target="_blank" rel="noopener noreferrer" style="text-decoration:none;">
-    <img src="https://skillicons.dev/icons?i=cs" height="40" alt="csharp logo" />
-  </a>
-  <img width="12" />
-
-  <a href="https://www.python.org/" target="_blank" rel="noopener noreferrer" style="text-decoration:none;">
-    <img src="https://skillicons.dev/icons?i=py" height="40" alt="python logo" />
-  </a>
-  <img width="12" />
-
-  <a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank" rel="noopener noreferrer" style="text-decoration:none;">
-    <img src="https://skillicons.dev/icons?i=html" height="40" alt="html5 logo" />
-  </a>
-  <img width="12" />
-
-  <a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank" rel="noopener noreferrer" style="text-decoration:none;">
-    <img src="https://skillicons.dev/icons?i=css" height="40" alt="css logo" />
-  </a>
-  <img width="12" />
-
-  <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noopener noreferrer" style="text-decoration:none;">
-    <img src="https://skillicons.dev/icons?i=js" height="40" alt="javascript logo" />
-  </a>
-  <img width="12" />
-
-  <a href="https://pytorch.org/" target="_blank" rel="noopener noreferrer" style="text-decoration:none;">
-    <img src="https://skillicons.dev/icons?i=pytorch" height="40" alt="pytorch logo" />
-  </a>
-  <img width="12" />
-
-  <a href="https://www.tensorflow.org/" target="_blank" rel="noopener noreferrer" style="text-decoration:none;">
-    <img src="https://skillicons.dev/icons?i=tensorflow" height="40" alt="tensorflow logo" />
-  </a>
-  <img width="12" />
-
-  <a href="https://www.ros.org/" target="_blank" rel="noopener noreferrer" style="text-decoration:none;">
-    <img src="https://skillicons.dev/icons?i=ros" height="40" alt="ros logo" />
-  </a>
-  <img width="12" />
-
-  <a href="https://www.arduino.cc/" target="_blank" rel="noopener noreferrer" style="text-decoration:none;">
-    <img src="https://skillicons.dev/icons?i=arduino" height="40" alt="arduino logo" />
-  </a>
-  <img width="12" />
-
-  <a href="https://www.docker.com/" target="_blank" rel="noopener noreferrer" style="text-decoration:none;">
-    <img src="https://skillicons.dev/icons?i=docker" height="40" alt="docker logo" />
-  </a>
-  <img width="12" />
-
-  <a href="https://kubernetes.io/" target="_blank" rel="noopener noreferrer" style="text-decoration:none;">
-    <img src="https://skillicons.dev/icons?i=kubernetes" height="40" alt="kubernetes logo" />
-  </a>
-  <img width="12" />
-
-  <a href="https://www.postgresql.org/" target="_blank" rel="noopener noreferrer" style="text-decoration:none;">
-    <img src="https://skillicons.dev/icons?i=postgres" height="40" alt="postgresql logo" />
-  </a>
-  <img width="12" />
-
-  <a href="https://www.mongodb.com/" target="_blank" rel="noopener noreferrer" style="text-decoration:none;">
-    <img src="https://skillicons.dev/icons?i=mongodb" height="40" alt="mongodb logo" />
-  </a>
-  <img width="12" />
-
-  <a href="https://redis.io/" target="_blank" rel="noopener noreferrer" style="text-decoration:none;">
-    <img src="https://skillicons.dev/icons?i=redis" height="40" alt="redis logo" />
-  </a>
-  <img width="12" />
-
-  <a href="https://aws.amazon.com/" target="_blank" rel="noopener noreferrer" style="text-decoration:none;">
-    <img src="https://skillicons.dev/icons?i=aws" height="40" alt="amazonwebservices logo" />
-  </a>
-  <img width="12" />
-
-  <a href="https://www.cloudflare.com/" target="_blank" rel="noopener noreferrer" style="text-decoration:none;">
-    <img src="https://skillicons.dev/icons?i=cloudflare" height="40" alt="cloudflare logo" />
-  </a>
-  <img width="12" />
-
-  <a href="https://unity.com/" target="_blank" rel="noopener noreferrer" style="text-decoration:none;">
-    <img src="https://skillicons.dev/icons?i=unity" height="40" alt="unity logo" />
+  <a href="https://www.linkedin.com/in/xiaotong-wu" target="_blank">
+    <img src="https://img.shields.io/static/v1?message=LinkedIn&logo=linkedin&label=&color=0077B5&logoColor=white&labelColor=&style=for-the-badge" height="25" alt="linkedin logo"  />
   </a>
 </div>
 
 ###
 
 <div align="center">
-  <img src="https://streak-stats.demolab.com?user=xiaotwu&locale=en&mode=daily&theme=dracula&hide_border=false&border_radius=5&order=3" height="150" alt="streak graph"  />
-  <img src="https://github-profile-trophy.vercel.app?username=xiaotwu&theme=dracula&column=-1&row=1&margin-w=8&margin-h=8&no-bg=false&no-frame=false&order=4" height="150" alt="trophy graph"  />
+  <img src="https://skillicons.dev/icons?i=c" height="40" alt="c logo"  />
+  <img width="12" />
+  <img src="https://skillicons.dev/icons?i=cs" height="40" alt="csharp logo"  />
+  <img width="12" />
+  <img src="https://skillicons.dev/icons?i=py" height="40" alt="python logo"  />
+  <img width="12" />
+  <img src="https://skillicons.dev/icons?i=html" height="40" alt="html5 logo"  />
+  <img width="12" />
+  <img src="https://skillicons.dev/icons?i=css" height="40" alt="css logo"  />
+  <img width="12" />
+  <img src="https://skillicons.dev/icons?i=js" height="40" alt="javascript logo"  />
+  <img width="12" />
+  <img src="https://skillicons.dev/icons?i=pytorch" height="40" alt="pytorch logo"  />
+  <img width="12" />
+  <img src="https://skillicons.dev/icons?i=tensorflow" height="40" alt="tensorflow logo"  />
+  <img width="12" />
+  <img src="https://skillicons.dev/icons?i=ros" height="40" alt="ros logo"  />
+  <img width="12" />
+  <img src="https://skillicons.dev/icons?i=arduino" height="40" alt="arduino logo"  />
+  <img width="12" />
+  <img src="https://skillicons.dev/icons?i=docker" height="40" alt="docker logo"  />
+  <img width="12" />
+  <img src="https://skillicons.dev/icons?i=kubernetes" height="40" alt="kubernetes logo"  />
+  <img width="12" />
+  <img src="https://skillicons.dev/icons?i=postgres" height="40" alt="postgresql logo"  />
+  <img width="12" />
+  <img src="https://skillicons.dev/icons?i=mongodb" height="40" alt="mongodb logo"  />
+  <img width="12" />
+  <img src="https://skillicons.dev/icons?i=redis" height="40" alt="redis logo"  />
+  <img width="12" />
+  <img src="https://skillicons.dev/icons?i=unity" height="40" alt="unity logo"  />
+  <img width="12" />
+  <img src="https://skillicons.dev/icons?i=aws" height="40" alt="amazonwebservices logo"  />
+  <img width="12" />
+  <img src="https://skillicons.dev/icons?i=gcp" height="40" alt="googlecloud logo"  />
+  <img width="12" />
+  <img src="https://skillicons.dev/icons?i=cloudflare" height="40" alt="cloudflare logo"  />
+</div>
+
+###
+
+<div align="center">
+  <img src="https://github-readme-stats.vercel.app/api?username=xiaotwu&hide_title=false&hide_rank=false&show_icons=true&include_all_commits=true&count_private=true&disable_animations=false&theme=github_dark&locale=en&hide_border=true&order=1" height="160" alt="stats graph"  />
+  <img src="https://streak-stats.demolab.com?user=xiaotwu&locale=en&mode=daily&theme=github_dark&hide_border=true&border_radius=5&order=3" height="160" alt="streak graph"  />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs?username=xiaotwu&locale=en&hide_title=false&layout=compact&card_width=320&langs_count=5&theme=github_dark&hide_border=true&order=2" height="150" alt="languages graph"  />
+  <img src="https://github-profile-trophy.vercel.app?username=xiaotwu&theme=darkhub&column=-1&row=1&margin-w=8&margin-h=8&no-bg=true&no-frame=true&order=4" height="200" alt="trophy graph"  />
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=xiaotwu&radius=16&theme=github-dark&area=true&order=5&hide_border=true" height="320" alt="activity-graph graph"  />
 </div>
 
 ###
