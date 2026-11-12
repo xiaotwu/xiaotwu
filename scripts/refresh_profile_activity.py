@@ -3,10 +3,12 @@
 import json
 import os
 import re
+import time
 from datetime import date, datetime, timedelta, timezone
 from html.parser import HTMLParser
 from io import BytesIO
 from pathlib import Path
+from urllib.error import URLError
 from urllib.parse import urlencode
 from urllib.request import Request, urlopen
 from zoneinfo import ZoneInfo
@@ -75,6 +77,23 @@ def public_calendar(today):
     return {day: parser.levels[day] for day in days}
 
 
+def complete_commit_search(query):
+    url = f"https://api.github.com/search/commits?{query}"
+    # The runner's repository token can get incomplete results from global search.
+    tokens = (None, os.environ.get("GH_TOKEN"), None)
+    for attempt, token in enumerate(tokens, 1):
+        try:
+            data = json.loads(download(url, "application/vnd.github+json", token))
+            if data["incomplete_results"]:
+                raise RuntimeError("GitHub returned an incomplete commit search.")
+            return data
+        except (URLError, TimeoutError, RuntimeError) as error:
+            if attempt == len(tokens):
+                raise
+            print(f"Commit search attempt {attempt} failed ({error}); retrying.")
+            time.sleep(2 * attempt)
+
+
 def recent_commits(now):
     end = now.astimezone(PACIFIC).date()
     start = end - timedelta(days=13)
@@ -86,15 +105,9 @@ def recent_commits(now):
         ),
         "sort": "committer-date",
         "order": "desc",
-        "per_page": 100,
+        "per_page": 30,
     })
-    data = json.loads(download(
-        f"https://api.github.com/search/commits?{query}",
-        "application/vnd.github+json",
-        os.environ.get("GH_TOKEN"),
-    ))
-    if data["incomplete_results"]:
-        raise ValueError("GitHub returned an incomplete commit search.")
+    data = complete_commit_search(query)
 
     rows = []
     seen = set()

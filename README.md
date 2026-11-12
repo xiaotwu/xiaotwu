@@ -1,15 +1,8 @@
 <h1 align="center">Tony</h1>
 
 <p align="center">
-  <a href="https://www.linkedin.com/in/xiaotong-wu"><picture>
-    <source media="(prefers-color-scheme: dark)" srcset="./assets/linkedin-dark.png">
-    <img src="./assets/linkedin-light.png" alt="LinkedIn" width="76" height="26">
-  </picture></a>
-  &nbsp;
-  <a href="https://xiaotong-wu.pages.dev/"><picture>
-    <source media="(prefers-color-scheme: dark)" srcset="./assets/website-dark.png">
-    <img src="./assets/website-light.png" alt="Website" width="72" height="26">
-  </picture></a>
+  <a href="https://www.linkedin.com/in/xiaotong-wu"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/linkedin-dark.png"><img src="./assets/linkedin-light.png" alt="LinkedIn" width="76" height="26"></picture></a>&nbsp;
+  <a href="https://xiaotong-wu.pages.dev/"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/website-dark.png"><img src="./assets/website-light.png" alt="Website" width="72" height="26"></picture></a>
 </p>
 
 <p align="center">
