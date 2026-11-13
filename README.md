@@ -3,8 +3,8 @@
 </h1>
 
 <p align="center">
-  <a href="https://www.linkedin.com/in/xiaotong-wu"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/linkedin-dark.png"><img src="./assets/linkedin-light.png" alt="LinkedIn" width="76" height="26"></picture></a>&nbsp;
-  <a href="https://xiaotong-wu.pages.dev/"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/website-dark.png"><img src="./assets/website-light.png" alt="Website" width="72" height="26"></picture></a>
+  <a href="https://www.linkedin.com/in/xiaotong-wu"><img src="./assets/linkedin-badge.svg" alt="LinkedIn" height="28"></a>&nbsp;
+  <a href="https://xiaotong-wu.pages.dev/"><img src="./assets/website-badge.svg" alt="Website" height="28"></a>
 </p>
 
 <p align="center">
