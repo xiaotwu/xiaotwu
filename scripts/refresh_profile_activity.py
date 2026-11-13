@@ -1,8 +1,10 @@
 """Render the public GitHub contribution calendar and update the recent links."""
 
+import argparse
 import json
 import os
 import re
+import subprocess
 import time
 from datetime import date, datetime, timedelta, timezone
 from html.parser import HTMLParser
@@ -11,6 +13,7 @@ from pathlib import Path
 from urllib.error import URLError
 from urllib.parse import urlencode
 from urllib.request import Request, urlopen
+from xml.etree import ElementTree
 from zoneinfo import ZoneInfo
 
 from PIL import Image, ImageDraw, ImageFont
@@ -190,7 +193,35 @@ def render_calendar(days, theme):
     return result.getvalue()
 
 
+def render_minesweeper(days, arcade_module):
+    renderer = ROOT / "scripts" / "render_minesweeper.mjs"
+    arcade_module = arcade_module.resolve()
+    result = subprocess.run(
+        [
+            "node", "--permission", f"--allow-fs-read={renderer}",
+            f"--allow-fs-read={arcade_module}", str(renderer), str(arcade_module),
+        ],
+        input=json.dumps({day.isoformat(): level for day, level in days.items()}),
+        text=True, stdout=subprocess.PIPE, check=True, timeout=45,
+        env={"PATH": os.environ["PATH"], "TZ": "UTC"},
+    )
+    rendered = json.loads(result.stdout)
+    svg_ns = "{http://www.w3.org/2000/svg}"
+    for theme in THEMES:
+        image = rendered[theme]
+        if len(image.encode("utf-8")) > 2_000_000:
+            raise ValueError(f"Minesweeper {theme} SVG is too large.")
+        svg = ElementTree.fromstring(image)
+        if svg.tag != f"{svg_ns}svg" or svg.find(f".//{svg_ns}animateTransform") is None:
+            raise ValueError(f"Minesweeper {theme} SVG is missing its animation.")
+    return rendered
+
+
 def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--arcade-module", type=Path, help="Path to the pinned arcade renderer.")
+    args = parser.parse_args()
+
     path = ROOT / "README.md"
     readme = path.read_text(encoding="utf-8")
     if readme.count(START_MARKER) != 1 or readme.count(END_MARKER) != 1:
@@ -201,12 +232,17 @@ def main():
     now = datetime.now(timezone.utc)
     days = public_calendar(now.date())
     commits = recent_commits(now)
-    # Prepare both snapshots before touching the existing README or image assets.
+    # Prepare all snapshots before touching the existing README or image assets.
     charts = {theme: render_calendar(days, palette) for theme, palette in THEMES.items()}
+    arcade = render_minesweeper(days, args.arcade_module) if args.arcade_module else {}
     for theme, image in charts.items():
         (ROOT / "assets" / f"contributions-{theme}.png").write_bytes(image)
+    for theme, image in arcade.items():
+        (ROOT / "assets" / f"minesweeper-{theme}.svg").write_text(image + "\n", encoding="utf-8")
     path.write_text(f"{before}{START_MARKER}\n\n{commits}\n\n{END_MARKER}{after}", encoding="utf-8")
     print(f"Refreshed {len(days)} contribution days and {commits.count('https://github.com/')} commit links.")
+    if arcade:
+        print(f"Rendered {len(arcade)} Minesweeper themes.")
 
 
 if __name__ == "__main__":

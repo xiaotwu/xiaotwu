@@ -1,4 +1,6 @@
-<h1 align="center">Tony</h1>
+<h1 align="center">
+  <picture><source media="(prefers-color-scheme: dark)" srcset="./assets/tony-blur-dark.svg"><img src="./assets/tony-blur-light.svg" alt="Tony"></picture>
+</h1>
 
 <p align="center">
   <a href="https://www.linkedin.com/in/xiaotong-wu"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/linkedin-dark.png"><img src="./assets/linkedin-light.png" alt="LinkedIn" width="76" height="26"></picture></a>&nbsp;
@@ -8,6 +10,13 @@
 <p align="center">
   <img src="./assets/cloud-observatory.webp" alt="A cartographer surveys a sea of clouds beside a floating Chinese observatory.">
 </p>
+
+## Minesweeper
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/minesweeper-dark.svg">
+  <img src="./assets/minesweeper-light.svg" alt="Minesweeper solver playing on my GitHub contribution calendar">
+</picture>
 
 ## GitHub activity
 

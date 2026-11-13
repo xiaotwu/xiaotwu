@@ -21,16 +21,29 @@ jobs:
       - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
         with:
           python-version: "3.14"
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: "24"
+          package-manager-cache: false
       - name: Install Pillow
         run: |
           python -m pip install --disable-pip-version-check --no-cache-dir --only-binary=:all: Pillow==13.0.0
-      - name: Refresh the contribution calendar and recent commits
+      - name: Fetch the Pac-Man Contribution Graph renderer
+        run: |
+          renderer="$RUNNER_TEMP/profile-arcade.mjs"
+          curl --fail --silent --show-error --max-time 20 --max-filesize 500000 --retry 2 \
+            https://raw.githubusercontent.com/abozanona/pacman-contribution-graph/6da16cd4d7ad8bad38149233424da7cd3ff60e0f/dist/pacman-contribution-graph.min.js \
+            --output "$renderer"
+          printf '%s  %s\n' 'd7cbb83853ea4ffd73adb862fcfd5f62370beb8592f8dfb3abf750c38b0ff004' "$renderer" \
+            | sha256sum --check
+      - name: Refresh the contribution calendar, Minesweeper, and recent commits
         env:
           GH_TOKEN: ${{ github.token }}
-        run: python scripts/refresh_profile_activity.py
+        run: python scripts/refresh_profile_activity.py --arcade-module "$RUNNER_TEMP/profile-arcade.mjs"
       - name: Publish changes
         run: |
-          git add -- README.md assets/contributions-light.png assets/contributions-dark.png
+          git add -- README.md assets/contributions-light.png assets/contributions-dark.png \
+            assets/minesweeper-light.svg assets/minesweeper-dark.svg
           if git diff --cached --quiet; then
             echo "Profile activity is current."
             exit 0
