@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-  <img src="./assets/arknights-muelsyse.webp" alt="Arknights fan art of Muelsyse holding a bouquet of roses"><br>
+  <img src="./assets/arknights-muelsyse.webp" width="680" alt="Arknights fan art of Muelsyse holding a bouquet of roses"><br>
   <sub>Art by <a href="https://www.pixiv.net/en/artworks/149572350">默椏_Myoasis</a></sub>
 </p>
 
