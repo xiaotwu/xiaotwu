@@ -1,29 +1,20 @@
-"""Render the public GitHub contribution calendar and update the recent links."""
+"""Render the public GitHub contribution calendar and Minesweeper animation."""
 
 import argparse
 import json
 import os
-import re
 import subprocess
-import time
 from datetime import date, datetime, timedelta, timezone
 from html.parser import HTMLParser
 from io import BytesIO
 from pathlib import Path
-from urllib.error import URLError
-from urllib.parse import urlencode
 from urllib.request import Request, urlopen
 from xml.etree import ElementTree
-from zoneinfo import ZoneInfo
 
 from PIL import Image, ImageDraw, ImageFont
 
 ACCOUNT = "xiaotwu"
-PROFILE_REPO = f"{ACCOUNT}/{ACCOUNT}"
-PACIFIC = ZoneInfo("America/Los_Angeles")
 ROOT = Path(__file__).resolve().parents[1]
-START_MARKER = "<!-- recent-commits:start -->"
-END_MARKER = "<!-- recent-commits:end -->"
 THEMES = {
     "light": (
         "#f1f8f4", "#405951",
@@ -36,10 +27,8 @@ THEMES = {
 }
 
 
-def download(url, accept, token=None):
+def download(url, accept):
     headers = {"User-Agent": "xiaotwu-profile-activity", "Accept": accept}
-    if token:
-        headers["Authorization"] = f"Bearer {token}"
     with urlopen(Request(url, headers=headers), timeout=25) as response:
         body = response.read(2_000_001)
     if len(body) > 2_000_000:
@@ -78,68 +67,6 @@ def public_calendar(today):
     if not all(day in parser.levels for day in days):
         raise ValueError("GitHub's public contribution calendar is incomplete.")
     return {day: parser.levels[day] for day in days}
-
-
-def complete_commit_search(query):
-    url = f"https://api.github.com/search/commits?{query}"
-    # The runner's repository token can get incomplete results from global search.
-    tokens = (None, os.environ.get("GH_TOKEN"), None)
-    for attempt, token in enumerate(tokens, 1):
-        try:
-            data = json.loads(download(url, "application/vnd.github+json", token))
-            if data["incomplete_results"]:
-                raise RuntimeError("GitHub returned an incomplete commit search.")
-            return data
-        except (URLError, TimeoutError, RuntimeError) as error:
-            if attempt == len(tokens):
-                raise
-            print(f"Commit search attempt {attempt} failed ({error}); retrying.")
-            time.sleep(2 * attempt)
-
-
-def recent_commits(now):
-    end = now.astimezone(PACIFIC).date()
-    start = end - timedelta(days=13)
-    # The API filters by UTC date. Cover both boundary days, then filter locally.
-    query = urlencode({
-        "q": (
-            f"author:{ACCOUNT} is:public -repo:{PROFILE_REPO} "
-            f"committer-date:{start - timedelta(days=1)}..{end + timedelta(days=1)}"
-        ),
-        "sort": "committer-date",
-        "order": "desc",
-        "per_page": 30,
-    })
-    data = complete_commit_search(query)
-
-    rows = []
-    seen = set()
-    for item in data["items"]:
-        repository = item["repository"]
-        name = repository["full_name"]
-        committed = datetime.fromisoformat(item["commit"]["committer"]["date"])
-        day = committed.astimezone(PACIFIC).date()
-        if repository["private"] or name.casefold() == PROFILE_REPO or not start <= day <= end:
-            continue
-        sha = item["sha"]
-        if not re.fullmatch(r"[\w.-]+/[\w.-]+", name, re.ASCII) or not re.fullmatch(r"[0-9a-f]{40}", sha):
-            raise ValueError("GitHub returned an unexpected commit reference.")
-        if (name, sha) in seen:
-            continue
-        seen.add((name, sha))
-        subject = item["commit"]["message"].partition("\n")[0].strip() or f"Commit {sha[:7]}"
-        if len(subject) > 120:
-            subject = subject[:119].rstrip() + "…"
-        subject = re.sub(r"([\\`*_\[\]<>#|~&])", r"\\\1", subject)
-        rows.append(
-            f"- [{subject}](https://github.com/{name}/commit/{sha}) "
-            f"· `{name.split('/', 1)[1]}` · {day:%b} {day.day}"
-        )
-        if len(rows) == 3:
-            return "\n".join(rows)
-    if data["total_count"] > len(data["items"]):
-        raise ValueError("Could not verify the latest public commits from the first search page.")
-    return "\n".join(rows) or "_No public commits in the last 14 days._"
 
 
 def render_calendar(days, theme):
@@ -222,25 +149,15 @@ def main():
     parser.add_argument("--arcade-module", type=Path, help="Path to the pinned arcade renderer.")
     args = parser.parse_args()
 
-    path = ROOT / "README.md"
-    readme = path.read_text(encoding="utf-8")
-    if readme.count(START_MARKER) != 1 or readme.count(END_MARKER) != 1:
-        raise ValueError("The README needs one recent commits marker pair.")
-    before, after_start = readme.split(START_MARKER)
-    _, after = after_start.split(END_MARKER)
-
-    now = datetime.now(timezone.utc)
-    days = public_calendar(now.date())
-    commits = recent_commits(now)
-    # Prepare all snapshots before touching the existing README or image assets.
+    days = public_calendar(datetime.now(timezone.utc).date())
+    # Prepare all snapshots before replacing the existing image assets.
     charts = {theme: render_calendar(days, palette) for theme, palette in THEMES.items()}
     arcade = render_minesweeper(days, args.arcade_module) if args.arcade_module else {}
     for theme, image in charts.items():
         (ROOT / "assets" / f"contributions-{theme}.png").write_bytes(image)
     for theme, image in arcade.items():
         (ROOT / "assets" / f"minesweeper-{theme}.svg").write_text(image + "\n", encoding="utf-8")
-    path.write_text(f"{before}{START_MARKER}\n\n{commits}\n\n{END_MARKER}{after}", encoding="utf-8")
-    print(f"Refreshed {len(days)} contribution days and {commits.count('https://github.com/')} commit links.")
+    print(f"Refreshed {len(days)} contribution days.")
     if arcade:
         print(f"Rendered {len(arcade)} Minesweeper themes.")
 

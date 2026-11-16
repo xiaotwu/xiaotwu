@@ -36,13 +36,11 @@ jobs:
             --output "$renderer"
           printf '%s  %s\n' 'd7cbb83853ea4ffd73adb862fcfd5f62370beb8592f8dfb3abf750c38b0ff004' "$renderer" \
             | sha256sum --check
-      - name: Refresh the contribution calendar, Minesweeper, and recent commits
-        env:
-          GH_TOKEN: ${{ github.token }}
+      - name: Refresh the contribution calendar and Minesweeper
         run: python scripts/refresh_profile_activity.py --arcade-module "$RUNNER_TEMP/profile-arcade.mjs"
       - name: Publish changes
         run: |
-          git add -- README.md assets/contributions-light.png assets/contributions-dark.png \
+          git add -- assets/contributions-light.png assets/contributions-dark.png \
             assets/minesweeper-light.svg assets/minesweeper-dark.svg
           if git diff --cached --quiet; then
             echo "Profile activity is current."
